@@ -1,29 +1,32 @@
 :root {
-  --color-white: #fff;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-accent: #ff6363;
+  --color-secondary: #e7fafe;
+  --color-brand: #e7f9fd;
+  --color-gray: rgb(0 0 0 / 0.1);
+  --color-gray-50: rgb(0 0 0 / 0.05);
+  --color-gray-400: rgb(0 0 0 / 0.4);
+  --color-gray-600: rgb(0 0 0 / 0.6);
+  --color-gray-alt: #dbe2e5;
 
-  --color-black: #000;
-  --color-black-50: rgb(0 0 0 / 0.05);
-  --color-black-100: rgb(0 0 0 / 0.1);
-  --color-black-400: rgb(0 0 0 / 0.4);
-  --color-black-600: rgb(0 0 0 / 0.6);
+  --gradient: linear-gradient(
+    180deg,
+    rgba(231, 249, 253, 0) 0%,
+    var(--color-brand) 100%
+  );
+  --drop-shadow: 10px 20px 40px rgba(41, 64, 70, 0.1);
 
-  --color-cyan: #e7fafe;
-  --color-accent: #ff7426;
-
-  --gradient-cyan: linear-gradient(180deg, rgb(231 249 253 / 0) 0%, #e7f9fd 100%);
-
-  --border: 1px solid var(--color-black-100);
-
-  --border-radius-l: 60px;
-  --border-radius-m: 30px;
-  --border-radius: 24px;
-  --border-radius-xs: 20px;
-  --border-radius-xxs: 16px;
+  --border-radius-m: 60px;
+  --border-radius: 30px;
+  --border-radius-s: 16px;
+  --border-radius-xs: 8px;
 
   --font-family-base: 'Inter';
 
   --container-width: #{$container-desktop-width}px;
   --container-padding-x: 16px;
+  --section-padding-y: #{fluid(80, 40)};
 
   --transition-duration: 0.2s;
 

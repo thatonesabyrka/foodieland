@@ -1,12 +1,12 @@
 .header {
-  padding-block: fluid(40, 15);
-  border-bottom: var(--border);
+  padding-block: #{fluid(32, 16)};
+  border-bottom: 1px solid var(--color-gray);
 
   &__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    column-gap: fluid(40, 20);
+    column-gap: 30px;
   }
 
   &__menu {
@@ -28,29 +28,24 @@
     &-list {
       display: flex;
       align-items: center;
-      column-gap: fluid(60, 20);
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      color: var(--color-black);
+      column-gap: 60px;
+
+      @include tablet {
+        column-gap: 30px;
+      }
 
       @include mobile {
         overflow-y: auto;
         flex-direction: column;
-        row-gap: 30px;
+        row-gap: 10px;
         padding-block: 30px;
       }
     }
 
     &-link {
-      position: relative;
-
-      &::after {
-        @include abs-center;
-
-        content: '';
-        width: calc(100% + 44px);
-        height: 44px;
-      }
+      display: inline-flex;
+      align-items: center;
+      height: 44px;
     }
   }
 

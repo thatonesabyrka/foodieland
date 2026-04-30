@@ -1,19 +1,28 @@
 import './Header.scss'
 import clsx from 'clsx'
-import { Logo } from '@/components/Logo'
-import { Socials } from '@/components/Socials'
-import { BurgerButton } from '@/components/BurgerButton'
-import { menuItems } from './header.data'
+import Logo from '@/components/Logo'
+import Socials from '@/components/Socials'
+import BurgerButton from '@/components/BurgerButton'
 
-export const Header = ({ url }) => {
+export default (props) => {
+  const { url } = props
+
+  const menuItems = [
+    { label: 'Home', href: '/' },
+    { label: 'Recipes', href: '/recipes' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'Contact', href: '/contact' },
+    { label: 'About us', href: '/about' },
+  ]
+
   return (
     <header className="header" data-js-mobile-menu="">
       <div className="header__inner container">
-        <Logo className="header__logo" loading="eager" />
+        <Logo className="header__logo" />
         <nav className="header__menu" data-js-mobile-menu-overlay="">
           <ul className="header__menu-list">
-            {menuItems.map(({ label, href }, index) => (
-              <li className="header__menu-item" key={index}>
+            {menuItems.map(({ label, href }) => (
+              <li className="header__menu-item" key={label}>
                 <a
                   className={clsx(
                     'header__menu-link',

@@ -1,4 +1,4 @@
-export class MobileMenu {
+class MobileMenu {
   selectors = {
     root: '[data-js-mobile-menu]',
     overlay: '[data-js-mobile-menu-overlay]',
@@ -29,3 +29,5 @@ export class MobileMenu {
     this.burgerButtonElement.addEventListener('click', this.onBurgerButtonClick)
   }
 }
+
+export default MobileMenu

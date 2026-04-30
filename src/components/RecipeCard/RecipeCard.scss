@@ -1,0 +1,74 @@
+.recipe-card {
+  --recipeCardImgMarginBottom: 24px;
+  --recipeCardTitleMarginBottom: 24px;
+  --recipeCardPadding: 16px 16px 32px;
+  --recipeCardBgImg: var(--gradient);
+  --recipeCardLikeButtonOffset: 36px;
+
+  position: relative;
+
+  &--transparent {
+    --recipeCardImgMarginBottom: 16px;
+    --recipeCardPadding: 0;
+    --recipeCardBgImg: none;
+    --recipeCardLikeButtonOffset: 16px;
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    padding: var(--recipeCardPadding);
+    background-image: var(--recipeCardBgImg);
+    border-radius: var(--border-radius);
+  }
+
+  &__image {
+    width: 100%;
+    border-radius: calc(var(--border-radius) / 3 * 2);
+
+    &:not(:last-child) {
+      margin-bottom: var(--recipeCardImgMarginBottom);
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+
+    &:not(:last-child) {
+      margin-bottom: var(--recipeCardTitleMarginBottom);
+    }
+  }
+
+  &__tags {
+    color: initial;
+  }
+
+  &__like-button {
+    @include flex-center(true);
+
+    position: absolute;
+    top: var(--recipeCardLikeButtonOffset);
+    right: var(--recipeCardLikeButtonOffset);
+    aspect-ratio: 1;
+    width: 48px;
+    padding: 0;
+    color: var(--color-gray-alt);
+    background-color: var(--color-white);
+    border: 4px solid transparent;
+    border-radius: 50%;
+
+    @include hover {
+      border-color: var(--color-accent);
+    }
+
+    &.is-liked {
+      color: var(--color-accent);
+
+      svg {
+        filter: drop-shadow(
+          0 5px 10px color-mix(in srgb, currentColor 20%, transparent)
+        );
+      }
+    }
+  }
+}

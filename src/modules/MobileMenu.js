@@ -1,8 +1,8 @@
-class OverlayMenu {
+export class MobileMenu {
   selectors = {
-    root: '[data-js-overlay-menu]',
-    dialog: '[data-js-overlay-menu-dialog]',
-    burgerButton: '[data-js-overlay-menu-burger-button]',
+    root: '[data-js-mobile-menu]',
+    overlay: '[data-js-mobile-menu-overlay]',
+    burgerButton: '[data-js-mobile-menu-burger-button]',
   }
 
   stateClasses = {
@@ -12,10 +12,7 @@ class OverlayMenu {
 
   constructor() {
     this.rootElement = document.querySelector(this.selectors.root)
-    if (!this.rootElement) {
-      return
-    }
-    this.dialogElement = this.rootElement.querySelector(this.selectors.dialog)
+    this.overlayElement = this.rootElement.querySelector(this.selectors.overlay)
     this.burgerButtonElement = this.rootElement.querySelector(
       this.selectors.burgerButton
     )
@@ -23,8 +20,8 @@ class OverlayMenu {
   }
 
   onBurgerButtonClick = () => {
+    this.overlayElement.classList.toggle(this.stateClasses.isActive)
     this.burgerButtonElement.classList.toggle(this.stateClasses.isActive)
-    this.dialogElement.open = !this.dialogElement.open
     document.documentElement.classList.toggle(this.stateClasses.isLock)
   }
 
@@ -32,5 +29,3 @@ class OverlayMenu {
     this.burgerButtonElement.addEventListener('click', this.onBurgerButtonClick)
   }
 }
-
-export default OverlayMenu

@@ -1,0 +1,22 @@
+.soc1als {
+  &__list {
+    display: flex;
+    column-gap: fluid(40, 30);
+    color: var(--color-black);
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  &__link {
+    position: relative;
+
+    &::after {
+      @include abs-center;
+      @include square(44px);
+
+      content: '';
+    }
+  }
+}

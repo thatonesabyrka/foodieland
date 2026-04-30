@@ -1,5 +1,4 @@
-import OverlayMenu from '@/modules/OverlayMenu'
-import InputMaskCollection from '@/modules/InputMaskCollection'
+import { InputMaskCollection, MobileMenu } from '@/modules'
 
-new OverlayMenu()
+new MobileMenu()
 new InputMaskCollection()

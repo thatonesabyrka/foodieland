@@ -1,5 +1,5 @@
 .icon {
-  --iconSize: #{fluid(28, 24)};
+  --iconSize: 22px;
 
   @include square(var(--iconSize));
 

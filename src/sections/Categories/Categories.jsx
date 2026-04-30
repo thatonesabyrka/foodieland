@@ -1,10 +1,9 @@
-import './Categories.scss'
-import { Section } from '@/layouts/Section'
-import { Grid } from '@/components/Grid'
-import { CategoryCard } from '@/components/CategoryCard'
-import { categories } from './categories.data'
+import Section from '@/layouts/Section'
+import Grid from '@/components/Grid'
+import CategoryCard from '@/components/CategoryCard'
+import categories from './data.json'
 
-export const Categories = () => {
+export default () => {
   return (
     <Section
       title="Categories"
@@ -12,8 +11,8 @@ export const Categories = () => {
       linkLabel="View All Categories"
     >
       <Grid columns={6}>
-        {categories.map((category, index) => (
-          <CategoryCard {...category} key={index} />
+        {categories.map((category) => (
+          <CategoryCard {...category} key={category.title} />
         ))}
       </Grid>
     </Section>

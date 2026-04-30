@@ -16,9 +16,8 @@
 
   &__control {
     width: 100%;
-    max-width: 300px;
-    height: fluid(67, 53);
-    padding-inline: fluid(20, 16);
+    height: fluid(80, 50);
+    padding-inline: fluid(32, 20);
     color: var(--color-white);
     background-color: var(--color-black);
     border: var(--border-width-m) solid var(--color-white);

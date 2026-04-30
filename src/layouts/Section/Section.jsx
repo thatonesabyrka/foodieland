@@ -1,20 +1,27 @@
 import './Section.scss'
 import clsx from 'clsx'
+import Button from '@/components/Button'
 
-export const Section = ({
-  className,
-  title,
-  titleId,
-  description,
-  linkLabel,
-  children,
-}) => {
+export default (props) => {
+  const {
+    className,
+    title,
+    titleId,
+    isHeaderVertical = false,
+    description,
+    linkLabel,
+    children,
+  } = props
+
   return (
-    <section
-      className={clsx('section', 'container', className)}
-      aria-labelledby={titleId}
-    >
-      <header className="section__header">
+    <section className={clsx('section', className)} aria-labelledby={titleId}>
+      <header
+        className={clsx(
+          'section__header',
+          'container',
+          isHeaderVertical && 'section__header--vertical'
+        )}
+      >
         <h2 className="section__title" id={titleId}>
           {title}
         </h2>
@@ -24,12 +31,12 @@ export const Section = ({
           </div>
         )}
         {linkLabel && (
-          <a className="section__link" href="/">
+          <Button className="section__link" href="/" mode="secondary">
             {linkLabel}
-          </a>
+          </Button>
         )}
       </header>
-      <div className="section__body">{children}</div>
+      <div className="section__body container">{children}</div>
     </section>
   )
 }

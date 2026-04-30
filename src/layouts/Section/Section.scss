@@ -1,38 +1,30 @@
 .section {
   display: grid;
   row-gap: fluid(80, 40);
-  padding-block: 80px;
+  padding-block: var(--section-padding-y);
 
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    column-gap: 16px;
+    gap: 24px 16px;
 
     @include mobile {
-      display: contents;
+      flex-direction: column;
+      align-items: start;
+      row-gap: 20px;
+    }
+
+    &--vertical {
+      flex-direction: column;
+
+      @include mobile-above {
+        text-align: center;
+      }
     }
   }
 
-  &__link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 200px;
-    min-height: 60px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    color: var(--color-black);
-    background-color: var(--color-cyan);
-    border-radius: var(--border-radius-xxs);
-
-    @include hover {
-      color: var(--color-white);
-      background-color: var(--color-accent);
-    }
-
-    @include mobile {
-      order: 1;
-    }
+  &__description {
+    max-width: 706px;
   }
 }

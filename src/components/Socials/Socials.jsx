@@ -1,13 +1,29 @@
 import './Socials.scss'
 import clsx from 'clsx'
-import { Icon } from '@/components/Icon'
-import { items } from './socials.data'
+import Icon from '@/components/Icon'
 
-export const Socials = ({ className }) => {
+export default (props) => {
+  const { className } = props
+
+  const links = [
+    {
+      label: 'Facebook',
+      icon: 'facebook',
+    },
+    {
+      label: 'Twitter',
+      icon: 'twitter',
+    },
+    {
+      label: 'Instagram',
+      icon: 'instagram',
+    },
+  ]
+
   return (
     <div className={clsx('soc1als', className)}>
       <ul className="soc1als__list">
-        {items.map(({ label, icon }, index) => (
+        {links.map(({ label, icon }, index) => (
           <li className="soc1als__item" key={index}>
             <a className="soc1als__link" href="/" title={label}>
               <span className="visually-hidden">{label}</span>

@@ -1,7 +1,9 @@
 import './CategoryCard.scss'
 import { Image } from 'minista'
 
-export const CategoryCard = ({ color, imgSrc, title }) => {
+export default (props) => {
+  const { title, imgSrc, color } = props
+
   return (
     <article className="category-card">
       <div

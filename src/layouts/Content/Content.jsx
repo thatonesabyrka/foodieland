@@ -1,5 +1,7 @@
 import './Content.scss'
 
-export const Content = ({ children }) => {
+export default (props) => {
+  const { children } = props
+
   return <main className="content">{children}</main>
 }

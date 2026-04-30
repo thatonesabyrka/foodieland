@@ -1,31 +1,28 @@
 :root {
-  --color-white: #ffffff;
-  --color-black: #000000;
+  --color-white: #fff;
 
-  --color-accent: #e50000;
+  --color-black: #000;
+  --color-black-50: rgb(0 0 0 / 0.05);
+  --color-black-100: rgb(0 0 0 / 0.1);
+  --color-black-400: rgb(0 0 0 / 0.4);
+  --color-black-600: rgb(0 0 0 / 0.6);
 
-  --color-gray: #808080;
+  --color-cyan: #e7fafe;
+  --color-accent: #ff7426;
 
-  --border: var(--border-width-m) solid var(--color-accent);
+  --gradient-cyan: linear-gradient(180deg, rgb(231 249 253 / 0) 0%, #e7f9fd 100%);
 
-  --border-width-xl: 6px;
-  --border-width-l: 4px;
-  --border-width-m: 3px;
-  --border-width-s: 1px;
+  --border: 1px solid var(--color-black-100);
 
-  --border-radius-l: 12px;
-  --border-radius-m: 10px;
-  --border-radius: 8px;
-  --border-radius-xs: 6px;
-  --border-radius-xxs: 5px;
-  --border-radius-xxxs: 4px;
+  --border-radius-l: 60px;
+  --border-radius-m: 30px;
+  --border-radius: 24px;
+  --border-radius-xs: 20px;
+  --border-radius-xxs: 16px;
 
-  --font-family-base: 'Manrope';
+  --font-family-base: 'Inter';
 
-  --container-width: #{fluid-to-laptop(
-      $container-desktop-width,
-      $container-laptop-width
-    )};
+  --container-width: #{$container-desktop-width}px;
   --container-padding-x: 16px;
 
   --transition-duration: 0.2s;

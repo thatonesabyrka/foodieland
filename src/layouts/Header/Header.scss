@@ -1,84 +1,66 @@
 .header {
-  padding-block: 20px;
-  background-color: var(--color-gray);
+  padding-block: fluid(40, 15);
+  border-bottom: var(--border);
 
   &__inner {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    column-gap: 16px;
-
-    @include tablet {
-      display: flex;
-      justify-content: space-between;
-    }
-  }
-
-  &__overlay-menu-dialog {
-    position: fixed;
-    inset: 0;
-    flex-direction: column-reverse;
-    justify-content: start;
-    row-gap: 16px;
-    width: 100%;
-    height: 100%;
-    padding: var(--container-padding-x);
-    background-color: var(--color-gray);
-    border: none;
-
-    @include tablet-above {
-      display: contents;
-    }
-
-    @include tablet {
-      &[open] {
-        display: flex;
-      }
-    }
+    column-gap: fluid(40, 20);
   }
 
   &__menu {
-    @include tablet {
-      overflow-y: auto;
+    @include mobile {
+      position: fixed;
+      z-index: var(--layer-mobile-menu);
+      inset: 0;
       display: flex;
+      flex-direction: column;
       justify-content: center;
-      height: 100%;
-      border-radius: 0;
+      background-color: var(--color-white);
+      transition-duration: var(--transition-duration);
+
+      &:not(.is-active) {
+        @include hide;
+      }
     }
 
     &-list {
       display: flex;
       align-items: center;
-      column-gap: 6px;
+      column-gap: fluid(60, 20);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--color-black);
 
-      @include tablet {
+      @include mobile {
+        overflow-y: auto;
         flex-direction: column;
-        row-gap: 16px;
-        margin-block: auto;
+        row-gap: 30px;
+        padding-block: 30px;
       }
     }
 
     &-link {
-      padding: 14px 20px;
-      color: var(--color-white);
+      position: relative;
 
-      &.is-active {
-        text-decoration: underline;
+      &::after {
+        @include abs-center;
+
+        content: '';
+        width: calc(100% + 44px);
+        height: 44px;
       }
     }
   }
 
-  &__actions {
-    display: flex;
-    align-items: center;
-    column-gap: 10px;
-
-    @include tablet-above {
-      justify-content: end;
+  &__soc1als {
+    @include mobile {
+      margin-left: auto;
     }
   }
 
   &__burger-button {
-    position: relative;
+    z-index: var(--layer-mobile-menu);
   }
 }
